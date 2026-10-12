@@ -151,23 +151,26 @@ export default function Clubs() {
       id="Curriculum"
       className="maxW px-4 sm:px-8 lg:px-12 py-20 flex flex-col gap-10 overflow-hidden relative"
     >
-      {/* Background ambient gold/purple orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-700/10 rounded-full blur-3xl pointer-events-none" />
+      {/* LA International Signature: Ambient Floating Clouds */}
+      <div className="top-cloud -top-8 -right-20 w-80 h-32 opacity-15 pointer-events-none">
+        <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
+          <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
+        </svg>
+      </div>
 
       {/* Header */}
       <div className="text-center space-y-3 relative z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-100 via-amber-50 to-amber-100 text-[#C59A47] font-bold text-xs sm:text-sm tracking-widest uppercase border border-amber-300 shadow-sm">
-          <FaStar className="text-amber-500 text-xs" />
-          <span>Co-Curricular Excellence &amp; Student Guilds</span>
-          <FaStar className="text-amber-500 text-xs" />
+        <div className="section-tag-lai justify-center">
+          <span>(</span>
+          <span>life at pss</span>
+          <span>)</span>
         </div>
-        <h2 className="h2 text-dark">
-          PSS Student <span className="text-[#2D0A54]">Societies &amp;</span>{" "}
-          <span className="text-[#C59A47]">Campus Life</span>
+        <h2 className="font-berlin text-3xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+          <span>Life Beyond the Classroom</span>
+          <span className="heading-cursor-line">|</span>
         </h2>
-        <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto px-4">
-          A dynamic spectrum of clubs and co-curricular pursuits designed to ignite curiosity, leadership, teamwork, and scientific innovation at The Pakistan School of Science.
+        <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4 leading-relaxed">
+          A dynamic spectrum of clubs, STEM academies, and co-curricular pursuits designed to ignite curiosity, leadership, teamwork, and scientific innovation at The Pakistan School of Science.
         </p>
 
         {/* Filter Tabs */}

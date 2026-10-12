@@ -72,20 +72,47 @@ export default function Team() {
   const activeLeader = leaders.find((l) => l.id === activeLeaderId) || leaders[0];
 
   return (
-    <section id="Team" className="maxWSec px-4 sm:px-8 lg:px-12 py-16 flex flex-col gap-10">
+    <section id="Team" className="maxWSec px-4 sm:px-8 lg:px-12 py-16 flex flex-col gap-10 relative overflow-hidden">
+      {/* LA International Signature: Ambient Floating Clouds */}
+      <div className="top-cloud -top-8 -left-20 w-80 h-32 opacity-15 pointer-events-none">
+        <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
+          <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
+        </svg>
+      </div>
+
       {/* Header */}
-      <div className="text-center space-y-3">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-[#C59A47] font-bold text-xs sm:text-sm tracking-wider uppercase border border-amber-200/80 shadow-sm">
-          <span>★</span>
-          <span>Words of Wisdom</span>
-          <span>★</span>
+      <div className="text-center space-y-3 relative z-10">
+        <div className="section-tag-lai justify-center">
+          <span>(</span>
+          <span>words of wisdom</span>
+          <span>)</span>
         </div>
-        <h2 className="h2 text-center text-dark">
-          Words of Wisdom from Our <span className="text-sec">Leadership</span>
+
+        <h2 className="font-berlin text-3xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+          <span>Words of Wisdom from Our Leadership</span>
+          <span className="heading-cursor-line">|</span>
         </h2>
-        <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+
+        <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           Guiding principles, visionary insights, and steadfast dedication from the architects of our educational mission.
         </p>
+
+        {/* LA International Signature: Physics-based Swinging Bell Animation */}
+        <div className="flex flex-col items-center justify-center pt-2">
+          <div className="relative w-14 h-14 flex items-center justify-center">
+            {/* Bell Body */}
+            <div className="bell-swing-anim w-12 h-12 text-[#C59A47] flex items-center justify-center relative">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 drop-shadow-md">
+                <path d="M12 2C10.34 2 9 3.34 9 5V5.29C6.72 6.35 5 8.7 5 11.5V17L3 19V20H21V19L19 17V11.5C19 8.7 17.28 6.35 15 5.29V5C15 3.34 13.66 2 12 2Z" />
+              </svg>
+              {/* Counter-swinging Clapper */}
+              <div className="clapper-swing-anim absolute -bottom-1 w-2.5 h-2.5 rounded-full bg-[#2D0A54] border border-amber-300 shadow-sm" />
+            </div>
+          </div>
+          <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest mt-1">
+            Heraldic Tarbiyah &amp; School Discipline
+          </span>
+        </div>
       </div>
 
       {/* Leadership Navigation Toggle Cards */}

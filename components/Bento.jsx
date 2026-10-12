@@ -43,18 +43,27 @@ const Bento = () => {
   return (
     <section
       id="About"
-      className="maxWSec px-4 sm:px-8 lg:px-12 py-16 flex gap-12 flex-col"
+      className="maxWSec px-4 sm:px-8 lg:px-12 py-16 flex gap-12 flex-col relative overflow-hidden"
     >
+      {/* LA International Signature: Ambient Floating Clouds */}
+      <div className="top-cloud -top-8 -left-20 w-80 h-32 opacity-15 pointer-events-none">
+        <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
+          <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
+        </svg>
+      </div>
+
       {/* Header */}
-      <div className="text-center space-y-3">
-        <div className="inline-block px-5 py-1.5 rounded-full bg-gradient-to-r from-amber-100 via-amber-50 to-amber-100 text-sec font-bold text-xs sm:text-sm tracking-widest uppercase border border-amber-300 shadow-sm">
-          ★ The Four Pillars of PSS Heraldic Excellence ★
+      <div className="text-center space-y-3 relative z-10">
+        <div className="section-tag-lai justify-center">
+          <span>(</span>
+          <span>about pss</span>
+          <span>)</span>
         </div>
-        <h2 className="h2">
-          Welcome to <span className="text-sec">The Pakistan School</span>{" "}
-          <span className="text-main">Of Science</span>
+        <h2 className="font-berlin text-3xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+          <span>Welcome to The Pakistan School Of Science</span>
+          <span className="heading-cursor-line">|</span>
         </h2>
-        <p className="text-gray text-base sm:text-lg max-w-3xl mx-auto">
+        <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
           Under the timeless motto{" "}
           <span className="font-bold text-sec">&quot;Knowledge is Power&quot;</span>,
           we mold brilliant young minds into scientific innovators, ethical leaders, and nation builders.

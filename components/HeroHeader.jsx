@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
@@ -50,7 +51,7 @@ const HeroHeader = ({ title, description }) => {
   return (
     <header className="w-full flex min-h-[640px] sm:min-h-[720px] h-[calc(100vh-0rem)] max-h-[880px] sm:max-h-[940px] p-0 m-0">
       <div className="bg-slate-950 flex relative flex-1 w-full rounded-b-3xl overflow-hidden shadow-2xl border-b-2 border-amber-300/40">
-        {/* Real School Photos - 100% Brightness & Proper Figure Framing */}
+        {/* Real School Photos - Enhanced Vibrancy & Cinematic Contrast */}
         {isHomePage &&
           heroPhotos.map((photo, index) => (
             <Image
@@ -59,14 +60,26 @@ const HeroHeader = ({ title, description }) => {
               alt={photo.alt}
               fill
               priority={index === 0}
-              className={`object-cover ${photo.objectPosition} transition-opacity duration-1000 ease-in-out scale-100 ${
-                currentSlide === index ? "opacity-100" : "opacity-0 pointer-events-none"
+              className={`object-cover ${photo.objectPosition} cinematic-photo transition-all duration-1000 ease-in-out ${
+                currentSlide === index ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
               }`}
             />
           ))}
 
-        {/* Minimal Clean Vignette - Photos Stay Bright and Vivid */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-black/20 to-slate-950/40 z-[2] pointer-events-none" />
+        {/* Minimal Clean Vignette - Photos Stay Bright, Crisp and Vivid */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-black/20 to-slate-950/30 z-[2] pointer-events-none" />
+
+        {/* LA International Signature: Ambient Floating Vector Clouds */}
+        <div className="top-cloud -top-4 -left-12 w-80 sm:w-96 h-28 opacity-20 z-[3] pointer-events-none">
+          <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-200">
+            <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
+          </svg>
+        </div>
+        <div className="bottom-cloud bottom-14 -right-12 w-96 sm:w-[480px] h-32 opacity-15 z-[3] pointer-events-none">
+          <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-purple-300">
+            <path d="M30 90 Q70 30 140 40 Q200 10 270 35 Q330 15 370 55 Q390 85 360 105 Q220 115 50 110 Z" fill="currentColor" />
+          </svg>
+        </div>
 
         {/* Subtle Ambient Sparkles */}
         <div className="absolute top-12 left-10 w-2.5 h-2.5 rounded-full bg-amber-300 animate-ping opacity-80 z-[4] pointer-events-none"></div>
@@ -74,7 +87,7 @@ const HeroHeader = ({ title, description }) => {
 
         {/* Header Content - Sufficient top padding to clear floating navbar completely */}
         <div className="relative text-light z-10 flex-1 flex flex-col items-center justify-start pt-28 sm:pt-36 lg:pt-40 px-3 sm:px-6 text-center pb-20 sm:pb-24">
-          {/* Motto Ribbon */}
+          {/* Section Tag Badge (LA International Style) */}
           <motion.div
             initial={{ y: -20, opacity: 0 }}
             animate={{
@@ -85,10 +98,10 @@ const HeroHeader = ({ title, description }) => {
             className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-amber-300/80 text-[11px] sm:text-xs md:text-sm font-bold tracking-widest uppercase text-amber-200 shadow-2xl mb-2 sm:mb-3"
           >
             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-400 animate-ping"></span>
-            ★ KNOWLEDGE IS POWER ★
+            ( PREMIER STEM &amp; CHARACTER EDUCATION • PSS )
           </motion.div>
 
-          {/* Main Heading with Crisp Outline & Drop-Shadow */}
+          {/* Main Heading with LA International Blinking Cursor Line */}
           <motion.h1
             initial={{ y: -20, opacity: 0 }}
             animate={{
@@ -105,9 +118,10 @@ const HeroHeader = ({ title, description }) => {
               textShadow:
                 "0 4px 20px rgba(0,0,0,0.95), 0 2px 6px rgba(0,0,0,0.95)",
             }}
-            className="font-berlin text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide text-white drop-shadow-2xl leading-[1.12] sm:leading-[1.08]"
+            className="font-berlin text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wide text-white drop-shadow-2xl leading-[1.12] sm:leading-[1.08] inline-flex items-center justify-center flex-wrap"
           >
-            {title}
+            <span>{title}</span>
+            <span className="heading-cursor-line">|</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -132,6 +146,37 @@ const HeroHeader = ({ title, description }) => {
             >
               {description}
             </motion.h4>
+          )}
+
+          {/* LA International Interactive Magnetic Bubble Buttons */}
+          {isHomePage && (
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { delay: 0.55, duration: 0.7 },
+              }}
+              className="flex flex-wrap items-center justify-center gap-3 mt-4 sm:mt-5 mb-2 z-20"
+            >
+              <Link
+                href="/OnlineAdmission"
+                className="lai-btn px-5 py-2.5 sm:px-7 sm:py-3 bg-gradient-to-r from-amber-400 via-[#C59A47] to-amber-500 text-slate-950 text-xs sm:text-sm shadow-xl hover:shadow-amber-500/30 group"
+              >
+                <span className="relative z-10 font-bold tracking-wide">Explore Admissions</span>
+                <span className="lai-btn-scale bg-white/40" />
+                <span className="lai-btn-dot bg-slate-950 group-hover:scale-125" />
+              </Link>
+
+              <Link
+                href="/OurPhilosophy"
+                className="lai-btn px-5 py-2.5 sm:px-7 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm shadow-lg group"
+              >
+                <span className="relative z-10 font-medium tracking-wide">Why Choose PSS</span>
+                <span className="lai-btn-scale bg-amber-400/30" />
+                <span className="lai-btn-dot bg-amber-300 group-hover:scale-125" />
+              </Link>
+            </motion.div>
           )}
 
           {isHomePage && <Sections />}

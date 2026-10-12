@@ -153,15 +153,15 @@ const Pipeline = () => {
       {/* Left Sticky Pillar */}
       <div className="w-full lg:w-1/3 flex-shrink-0 sm:py-8 lg:py-12 relative">
         <div className="sticky top-28 flex flex-col max-lg:items-center max-lg:text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-100 via-amber-50 to-amber-100 text-[#C59A47] font-bold text-xs uppercase tracking-widest border border-amber-300 shadow-sm w-fit">
-            <FaStar className="text-amber-500 text-xs" />
-            <span>Academic Pathway</span>
-            <FaStar className="text-amber-500 text-xs" />
+          <div className="section-tag-lai max-lg:justify-center">
+            <span>(</span>
+            <span>academic roadmap</span>
+            <span>)</span>
           </div>
 
-          <h2 className="h2 w-fit text-dark">
-            PAKISTAN <br className="max-sm:hidden" />
-            <span className="text-sec">School of Science</span>
+          <h2 className="font-berlin text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight w-fit">
+            <span>The PSS Science Pathway</span>
+            <span className="heading-cursor-line">|</span>
           </h2>
 
           <p className="text-slate-600 text-sm sm:text-base max-w-sm leading-relaxed">
@@ -306,7 +306,7 @@ const Pipeline = () => {
                           src={item.image}
                           alt={item.title}
                           fill
-                          className="object-cover group-hover/img:scale-105 transition-transform duration-700"
+                          className="object-cover cinematic-photo group-hover/img:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20 pointer-events-none" />
 

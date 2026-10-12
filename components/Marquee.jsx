@@ -1,140 +1,111 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
-const DefaultList = [
-  "Admissions Open for Session 2026-2027 ★ The Pakistan School of Science ★ Knowledge is Power",
-];
-
-export default function Marquee({ List = DefaultList, direction, speed }) {
-  const marquee = useRef();
-  const first = useRef();
-  const second = useRef();
-  let xPercent = 0;
-  const ArrayData = [...List, ...List, ...List, ...List];
+export default function Marquee() {
+  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     let animId;
-    const rightAnimation = () => {
-      if (xPercent > 0) {
-        xPercent = -100;
-      }
-      if (first.current && second.current) {
-        gsap.to([first.current, second.current], {
-          xPercent: xPercent,
-          duration: 0,
-          ease: "none",
-        });
-      }
-      animId = requestAnimationFrame(rightAnimation);
-      xPercent += speed / 10;
+    let current = 0;
+    const animate = () => {
+      current -= 0.75;
+      if (current <= -2500) current = 0;
+      setOffset(current);
+      animId = requestAnimationFrame(animate);
     };
-
-    const leftAnimation = () => {
-      if (xPercent < -100) {
-        xPercent = 0;
-      }
-      if (first.current && second.current) {
-        gsap.to([first.current, second.current], {
-          xPercent: xPercent,
-          duration: 0,
-          ease: "none",
-        });
-      }
-      animId = requestAnimationFrame(leftAnimation);
-      xPercent -= speed / 10;
-    };
-
-    if (direction === "left") {
-      animId = requestAnimationFrame(leftAnimation);
-    } else {
-      animId = requestAnimationFrame(rightAnimation);
-    }
-
+    animId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animId);
-  }, [direction, speed]);
+  }, []);
+
+  const marqueeText =
+    "★ CURIOSITY • INNOVATION • STEM ROBOTICS • PRE-MEDICAL • PRE-ENGINEERING • 100% BOARD DISTINCTION • ISLAMIC TARBIYAH • KNOWLEDGE IS POWER • THE PAKISTAN SCHOOL OF SCIENCE • ADMISSIONS 2026-27 • ";
+  const repeatedText = Array(12).fill(marqueeText).join(" ");
 
   return (
-    <section
-      style={{
-        maskImage: `linear-gradient(
-        to right,
-        transparent 2%,
-        black 15%,
-        black 85%,
-        transparent 98%
-      )`,
-        WebkitMaskImage: `linear-gradient(
-        to right,
-        transparent 2%,
-        black 15%,
-        black 85%,
-        transparent 98%
-      )`,
-      }}
-      className="maxWSec w-full flex justify-center items-center py-6 sm:py-10 overflow-hidden"
-    >
-      <div
-        ref={marquee}
-        className="h-fit w-fit flex-nowrap relative flex border-y-2 border-amber-300/80 bg-white/90 backdrop-blur-sm py-2.5 flex-shrink-0 shadow-sm"
-      >
-        <div
-          className="h-full flex-1 flex w-fit flex-nowrap items-center flex-shrink-0"
-          ref={first}
-        >
-          {ArrayData.map((item, i) => {
-            return (
-              <div
-                key={i}
-                className="flex items-center w-fit py-2 px-3 sm:px-6 gap-3 sm:gap-6 flex-shrink-0"
-              >
-                <div className="text-base sm:text-2xl font-bold font-berlin text-sec whitespace-nowrap flex-shrink-0">
-                  {item}
-                </div>
-                {i !== ArrayData.length && (
-                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl p-1 bg-white shadow-md border-2 border-main flex-shrink-0 flex items-center justify-center">
-                    <Image
-                      src={"/psslogo.png"}
-                      width={100}
-                      height={100}
-                      alt="PSS Logo"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-        <div
-          ref={second}
-          className="flex-shrink-0 h-full flex w-full flex-nowrap items-center absolute left-full top-0"
-        >
-          {ArrayData.map((item, i) => {
-            return (
-              <div
-                key={i}
-                className="flex items-center w-fit py-2 px-3 sm:px-6 gap-3 sm:gap-6 flex-shrink-0"
-              >
-                <div className="text-base sm:text-2xl font-bold font-berlin text-sec whitespace-nowrap flex-shrink-0">
-                  {item}
-                </div>
-                {i !== ArrayData.length && (
-                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl p-1 bg-white shadow-md border-2 border-main flex-shrink-0 flex items-center justify-center">
-                    <Image
-                      src={"/psslogo.png"}
-                      width={100}
-                      height={100}
-                      alt="PSS Logo"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                )}
-              </div>
-            );
-          })}
+    <section className="w-full relative overflow-hidden py-6 sm:py-10 bg-gradient-to-b from-transparent via-amber-50/30 to-transparent">
+      {/* Ambient drifting cloud behind ribbon */}
+      <div className="top-cloud -top-8 left-10 w-72 sm:w-96 h-24 opacity-20 pointer-events-none">
+        <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
+          <path
+            d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+
+      <div className="w-full max-w-[1920px] mx-auto px-2 sm:px-4">
+        {/* LA International Signature Curved Ribbon Marquee */}
+        <div className="w-full relative">
+          <svg
+            viewBox="0 0 1920 280"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+            className="w-full h-auto overflow-visible block drop-shadow-2xl"
+          >
+            <defs>
+              <linearGradient id="ribbonGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#2D0A54" />
+                <stop offset="35%" stopColor="#43147C" />
+                <stop offset="70%" stopColor="#2D0A54" />
+                <stop offset="100%" stopColor="#1A0536" />
+              </linearGradient>
+              <linearGradient id="ribbonBorderGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#C59A47" />
+                <stop offset="50%" stopColor="#F5D77F" />
+                <stop offset="100%" stopColor="#C59A47" />
+              </linearGradient>
+              <path
+                id="rbnPath"
+                d="M -60,230 C 340,30 760,230 1160,110 C 1560,-10 1760,210 2020,110"
+              />
+            </defs>
+
+            {/* Glowing Golden Outer Border Track */}
+            <use
+              href="#rbnPath"
+              fill="none"
+              stroke="url(#ribbonBorderGrad)"
+              strokeWidth="74"
+              strokeLinecap="round"
+              opacity="0.9"
+            />
+
+            {/* Deep Royal Purple Ribbon Core */}
+            <use
+              href="#rbnPath"
+              fill="none"
+              stroke="url(#ribbonGrad)"
+              strokeWidth="68"
+              strokeLinecap="round"
+            />
+
+            {/* High-Tech Animated Circuit Dash Pulse */}
+            <use
+              href="#rbnPath"
+              fill="none"
+              stroke="#F5D77F"
+              strokeWidth="2.5"
+              className="webflow-animated-line"
+              opacity="0.8"
+            />
+
+            {/* Fluid Text Following the Wave Path */}
+            <text
+              dominantBaseline="middle"
+              style={{
+                fontFamily: "Berlin, sans-serif",
+                fontSize: "20px",
+                fill: "#FFFFFF",
+                fontWeight: "bold",
+                letterSpacing: "0.08em",
+              }}
+            >
+              <textPath href="#rbnPath" startOffset={`${offset}px`}>
+                {repeatedText}
+              </textPath>
+            </text>
+          </svg>
         </div>
       </div>
     </section>
