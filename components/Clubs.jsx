@@ -230,7 +230,7 @@ export default function Clubs() {
             <Link
               key={club.id}
               href={club.slug}
-              className="shrink-0 w-[300px] sm:w-[360px] lg:w-[400px] h-[500px] rounded-3xl relative overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-[#C59A47] flex flex-col justify-between"
+              className="shrink-0 w-[280px] sm:w-[360px] lg:w-[400px] h-[480px] sm:h-[500px] rounded-3xl relative overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-200 hover:border-[#C59A47] flex flex-col justify-between"
             >
               {/* Background Real Photo with Smooth Zoom */}
               <div className="absolute inset-0 bg-slate-900 overflow-hidden">

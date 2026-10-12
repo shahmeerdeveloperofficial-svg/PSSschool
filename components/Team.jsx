@@ -165,7 +165,7 @@ export default function Team() {
           {/* Left Column: Orbital Portrait Stage */}
           <div className="lg:col-span-5 flex flex-col items-center text-center">
             {/* Orbital Stage Container */}
-            <div className="relative w-[280px] h-[280px] sm:w-[310px] sm:h-[310px] flex items-center justify-center mb-6">
+            <div className="relative w-[260px] h-[260px] sm:w-[310px] sm:h-[310px] flex items-center justify-center mb-6">
               {/* Organic Blob Background Shape */}
               <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-amber-100/70 via-amber-50/50 to-purple-100/40 blur-sm pointer-events-none" />
 

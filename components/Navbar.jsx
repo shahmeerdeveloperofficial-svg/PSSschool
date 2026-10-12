@@ -53,24 +53,24 @@ const Navbar = () => {
 
   return (
     <motion.nav className="sticky -top-4 w-full z-50 h-0 max-w-full">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full maxW p-4 sm:p-8">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full maxW p-3 sm:p-8">
         <div className="shadow-[0_8px_35px_0_rgba(45,10,84,0.14)] border border-amber-200/50 flex items-center justify-between rounded-2xl h-16 sm:h-20 bg-white/95 backdrop-blur-md text-dark px-3 sm:px-6">
-          <Link href={"/"} name="home link" className="mr-auto flex items-center gap-3 group">
+          <Link href={"/"} name="home link" className="mr-auto flex items-center gap-2.5 sm:gap-3 group">
             <div className="relative">
               <Image
                 src={"/psslogo.png"}
                 width={300}
                 height={300}
                 alt="The Pakistan School of Science logo"
-                className="h-11 sm:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-10 sm:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-berlin font-bold text-base sm:text-xl text-sec leading-none tracking-wide">
+              <span className="font-berlin font-bold text-sm sm:text-xl text-sec leading-none tracking-wide">
                 PAKISTAN SCHOOL OF SCIENCE
               </span>
-              <span className="text-[9px] sm:text-[11px] font-bold tracking-widest text-main uppercase mt-0.5">
+              <span className="text-[8.5px] sm:text-[11px] font-bold tracking-widest text-main uppercase mt-0.5">
                 Knowledge Is Power • PSS
               </span>
             </div>
