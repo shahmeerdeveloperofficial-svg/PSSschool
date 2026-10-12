@@ -69,7 +69,7 @@ const HeroHeader = ({ title, description }) => {
         {/* Minimal Clean Vignette - Photos Stay Bright, Crisp and Vivid */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-black/20 to-slate-950/30 z-[2] pointer-events-none" />
 
-        {/* LA International Signature: Ambient Floating Vector Clouds */}
+        {/* Ambient Floating Vector Clouds */}
         <div className="top-cloud -top-4 -left-12 w-80 sm:w-96 h-28 opacity-20 z-[3] pointer-events-none">
           <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-200">
             <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
@@ -87,7 +87,7 @@ const HeroHeader = ({ title, description }) => {
 
         {/* Header Content - Sufficient top padding to clear floating navbar completely */}
         <div className="relative text-light z-10 flex-1 flex flex-col items-center justify-start pt-28 sm:pt-36 lg:pt-40 px-3 sm:px-6 text-center pb-20 sm:pb-24">
-          {/* Section Tag Badge (LA International Style) */}
+          {/* Section Tag Badge */}
           <motion.div
             initial={{ y: -20, opacity: 0 }}
             animate={{
@@ -101,7 +101,7 @@ const HeroHeader = ({ title, description }) => {
             ( PREMIER STEM &amp; CHARACTER EDUCATION • PSS )
           </motion.div>
 
-          {/* Main Heading with LA International Blinking Cursor Line */}
+          {/* Main Heading with Blinking Cursor Line */}
           <motion.h1
             initial={{ y: -20, opacity: 0 }}
             animate={{
@@ -148,7 +148,7 @@ const HeroHeader = ({ title, description }) => {
             </motion.h4>
           )}
 
-          {/* LA International Interactive Magnetic Bubble Buttons */}
+          {/* PSS Interactive CTA Buttons */}
           {isHomePage && (
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -161,20 +161,20 @@ const HeroHeader = ({ title, description }) => {
             >
               <Link
                 href="/OnlineAdmission"
-                className="lai-btn px-5 py-2.5 sm:px-7 sm:py-3 bg-gradient-to-r from-amber-400 via-[#C59A47] to-amber-500 text-slate-950 text-xs sm:text-sm shadow-xl hover:shadow-amber-500/30 group"
+                className="pss-btn px-5 py-2.5 sm:px-7 sm:py-3 bg-gradient-to-r from-amber-400 via-[#C59A47] to-amber-500 text-slate-950 text-xs sm:text-sm shadow-xl hover:shadow-amber-500/30 group"
               >
                 <span className="relative z-10 font-bold tracking-wide">Explore Admissions</span>
-                <span className="lai-btn-scale bg-white/40" />
-                <span className="lai-btn-dot bg-slate-950 group-hover:scale-125" />
+                <span className="pss-btn-scale bg-white/40" />
+                <span className="pss-btn-dot bg-slate-950 group-hover:scale-125" />
               </Link>
 
               <Link
                 href="/OurPhilosophy"
-                className="lai-btn px-5 py-2.5 sm:px-7 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm shadow-lg group"
+                className="pss-btn px-5 py-2.5 sm:px-7 sm:py-3 bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm shadow-lg group"
               >
                 <span className="relative z-10 font-medium tracking-wide">Why Choose PSS</span>
-                <span className="lai-btn-scale bg-amber-400/30" />
-                <span className="lai-btn-dot bg-amber-300 group-hover:scale-125" />
+                <span className="pss-btn-scale bg-amber-400/30" />
+                <span className="pss-btn-dot bg-amber-300 group-hover:scale-125" />
               </Link>
             </motion.div>
           )}
@@ -212,7 +212,7 @@ const Sections = () => {
     {
       title: "Admissions",
       icon: "/icons/LMS.svg",
-      link: "#LMS",
+      link: "/OnlineAdmission",
       bgClass: "bg-[#8b5cf6] hover:bg-[#7c3aed]",
       shadowClass: "shadow-purple-500/40 shadow-lg",
     },
@@ -226,6 +226,10 @@ const Sections = () => {
   ];
 
   const handleSectionClick = (link) => {
+    if (link.startsWith("/")) {
+      window.location.href = link;
+      return;
+    }
     const section = document.querySelector(link);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -256,7 +260,7 @@ const Sections = () => {
             className="group relative w-11 sm:w-24 h-full cursor-pointer flex justify-center"
             onClick={() => handleSectionClick(item.link)}
           >
-            {/* Colorful Button Circle matching Tabassum Educational Alliance */}
+            {/* PSS Quick Section Button */}
             <div
               className={`w-9 sm:w-16 -top-5 sm:-top-8 aspect-square ${item.bgClass} ${item.shadowClass} transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 left-1/2 -translate-x-1/2 absolute flex items-center justify-center rounded-full border-2 border-white`}
             >

@@ -82,7 +82,7 @@ export default function Team() {
 
       {/* Header */}
       <div className="text-center space-y-3 relative z-10">
-        <div className="section-tag-lai justify-center">
+        <div className="section-tag-pss justify-center">
           <span>(</span>
           <span>words of wisdom</span>
           <span>)</span>

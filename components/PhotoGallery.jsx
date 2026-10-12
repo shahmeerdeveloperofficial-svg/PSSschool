@@ -213,11 +213,14 @@ const categories = [
 export default function PhotoGallery() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(8);
 
   const filteredPhotos =
     selectedCategory === "all"
       ? photos
       : photos.filter((p) => p.category === selectedCategory);
+
+  const displayedPhotos = filteredPhotos.slice(0, visibleCount);
 
   const openLightbox = (index) => {
     setLightboxIndex(index);
@@ -289,7 +292,7 @@ export default function PhotoGallery() {
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
       >
         <AnimatePresence>
-          {filteredPhotos.map((photo, idx) => {
+          {displayedPhotos.map((photo, idx) => {
             const isFeatured = idx % 7 === 0;
             return (
               <motion.div
@@ -341,6 +344,18 @@ export default function PhotoGallery() {
           })}
         </AnimatePresence>
       </motion.div>
+
+      {/* Load More Button */}
+      {visibleCount < filteredPhotos.length && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setVisibleCount((prev) => prev + 8)}
+            className="px-6 py-3 rounded-full bg-white border border-amber-300/80 text-sec font-bold text-xs sm:text-sm shadow-md hover:bg-amber-50 hover:border-amber-400 hover:shadow-lg transition-all"
+          >
+            Load More Campus Photos ({filteredPhotos.length - visibleCount} remaining)
+          </button>
+        </div>
+      )}
 
       {/* Lightbox HD Modal */}
       {lightboxIndex !== null && (

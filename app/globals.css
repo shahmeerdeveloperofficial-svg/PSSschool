@@ -290,6 +290,7 @@ html.lenis body {
 }
 
 /* 4. Interactive Magnetic Button with Scalable Bubble & Dot */
+.pss-btn,
 .lai-btn {
   position: relative;
   display: inline-flex;
@@ -303,6 +304,7 @@ html.lenis body {
   cursor: pointer;
 }
 
+.pss-btn-scale,
 .lai-btn-scale {
   position: absolute;
   right: -24px;
@@ -316,10 +318,12 @@ html.lenis body {
   z-index: 1;
 }
 
+.pss-btn:hover .pss-btn-scale,
 .lai-btn:hover .lai-btn-scale {
   transform: translateY(-50%) scale(9);
 }
 
+.pss-btn-dot,
 .lai-btn-dot {
   width: 8px;
   height: 8px;
@@ -362,7 +366,8 @@ html.lenis body {
   animation: clapperSwing 2.2s ease-in-out 0.1s infinite;
 }
 
-/* 7. Section Tag Badge (LA International Style) */
+/* 7. Section Tag Badge (PSS Style) */
+.section-tag-pss,
 .section-tag-lai {
   display: inline-flex;
   align-items: center;
@@ -374,4 +379,5 @@ html.lenis body {
   color: #C59A47;
   margin-bottom: 0.5rem;
 }
+
 

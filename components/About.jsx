@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import ScrollReveal from "./ui/ScrollReveal";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -98,7 +99,7 @@ const pillars = [
 export default function About() {
   return (
     <section id="About" className="maxWSec px-4 sm:px-8 lg:px-12 py-20 flex gap-14 flex-col relative overflow-hidden">
-      {/* LA International Signature: Ambient Floating Clouds */}
+      {/* PSS Ambient Floating Clouds */}
       <div className="top-cloud -top-10 -left-20 w-96 h-36 opacity-15 pointer-events-none">
         <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
           <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
@@ -110,9 +111,9 @@ export default function About() {
         </svg>
       </div>
 
-      {/* Header with Tag & LA International Cursor Line */}
+      {/* Header with Tag & Cursor Line */}
       <div className="text-center space-y-3 relative z-10">
-        <div className="section-tag-lai justify-center">
+        <div className="section-tag-pss justify-center">
           <span>(</span>
           <span>why pss</span>
           <span>)</span>
@@ -128,7 +129,7 @@ export default function About() {
         </p>
       </div>
 
-      {/* 4 High-Impact Stat Cards Grid (LA International Style) */}
+      {/* 4 High-Impact Stat Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
         {statHighlights.map((stat, i) => (
           <motion.div
@@ -228,11 +229,11 @@ export default function About() {
 
                 <Link
                   href={pillar.slug}
-                  className="lai-btn px-4 py-2 bg-slate-900 text-white hover:bg-[#2D0A54] text-xs transition-colors group/btn"
+                  className="pss-btn px-4 py-2 bg-slate-900 text-white hover:bg-[#2D0A54] text-xs transition-colors group/btn"
                 >
                   <span className="relative z-10">Learn more</span>
-                  <span className="lai-btn-scale bg-[#C59A47]/40" />
-                  <span className="lai-btn-dot bg-amber-400 group-hover/btn:scale-125" />
+                  <span className="pss-btn-scale bg-[#C59A47]/40" />
+                  <span className="pss-btn-dot bg-amber-400 group-hover/btn:scale-125" />
                 </Link>
               </div>
             </motion.div>

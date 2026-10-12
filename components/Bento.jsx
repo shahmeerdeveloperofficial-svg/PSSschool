@@ -4,6 +4,7 @@ import React from "react";
 import Button from "./ui/Button";
 import Link from "next/link";
 import Image from "next/image";
+import ScrollReveal from "./ui/ScrollReveal";
 import {
   FaGraduationCap,
   FaAward,
@@ -45,7 +46,7 @@ const Bento = () => {
       id="About"
       className="maxWSec px-4 sm:px-8 lg:px-12 py-16 flex gap-12 flex-col relative overflow-hidden"
     >
-      {/* LA International Signature: Ambient Floating Clouds */}
+      {/* PSS Ambient Floating Clouds */}
       <div className="top-cloud -top-8 -left-20 w-80 h-32 opacity-15 pointer-events-none">
         <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
           <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
@@ -53,8 +54,8 @@ const Bento = () => {
       </div>
 
       {/* Header */}
-      <div className="text-center space-y-3 relative z-10">
-        <div className="section-tag-lai justify-center">
+      <ScrollReveal animation="fadeUp" className="text-center space-y-3 relative z-10">
+        <div className="section-tag-pss justify-center">
           <span>(</span>
           <span>about pss</span>
           <span>)</span>
@@ -68,10 +69,10 @@ const Bento = () => {
           <span className="font-bold text-sec">&quot;Knowledge is Power&quot;</span>,
           we mold brilliant young minds into scientific innovators, ethical leaders, and nation builders.
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Bento Grid */}
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 items-stretch">
+      <ScrollReveal animation="fadeUp" delay={0.1} className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 items-stretch">
         {/* ROW 1 - LEFT: Academic Excellence (Spans 2 columns on xl) */}
         <div className="sm:col-span-2 xl:col-span-2 group/card p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-sec via-[#2B0955] to-[#14022A] text-light relative overflow-hidden shadow-2xl border border-amber-300/30 flex flex-col justify-between">
           {/* Background Book Silhouette */}
@@ -296,7 +297,7 @@ const Bento = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 };

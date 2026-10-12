@@ -151,7 +151,7 @@ export default function Clubs() {
       id="Curriculum"
       className="maxW px-4 sm:px-8 lg:px-12 py-20 flex flex-col gap-10 overflow-hidden relative"
     >
-      {/* LA International Signature: Ambient Floating Clouds */}
+      {/* PSS Ambient Floating Clouds */}
       <div className="top-cloud -top-8 -right-20 w-80 h-32 opacity-15 pointer-events-none">
         <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
           <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
@@ -160,7 +160,7 @@ export default function Clubs() {
 
       {/* Header */}
       <div className="text-center space-y-3 relative z-10">
-        <div className="section-tag-lai justify-center">
+        <div className="section-tag-pss justify-center">
           <span>(</span>
           <span>life at pss</span>
           <span>)</span>

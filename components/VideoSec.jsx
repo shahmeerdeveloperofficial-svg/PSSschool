@@ -337,6 +337,7 @@ const VideoSec = () => {
                 ref={videoRef}
                 className="w-full h-full object-cover"
                 poster={currentVideo.poster}
+                preload="none"
                 playsInline
                 onError={() => setVideoError(true)}
                 onPlay={() => {

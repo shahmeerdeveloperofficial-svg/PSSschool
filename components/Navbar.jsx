@@ -55,37 +55,29 @@ const Navbar = () => {
     <motion.nav className="sticky top-0 w-full z-50 h-0 max-w-full">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full maxW px-2 sm:px-6 lg:px-8 pt-0">
         <div className="shadow-[0_4px_25px_0_rgba(45,10,84,0.12)] border-b-2 border-x border-amber-200/60 flex items-center justify-between rounded-b-2xl sm:rounded-b-3xl h-16 sm:h-20 bg-white/95 backdrop-blur-md text-dark px-3 sm:px-6">
-          <Link href={"/"} name="home link" className="mr-auto flex items-center gap-2.5 sm:gap-3 group">
+          <Link href={"/"} name="home link" className="flex items-center group py-1">
             <div className="relative">
               <Image
                 src={"/psslogo.png"}
                 width={300}
                 height={300}
                 alt="The Pakistan School of Science logo"
-                className="h-10 sm:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-12 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 priority
               />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-berlin font-bold text-sm sm:text-xl text-sec leading-none tracking-wide">
-                PAKISTAN SCHOOL OF SCIENCE
-              </span>
-              <span className="text-[8.5px] sm:text-[11px] font-bold tracking-widest text-main uppercase mt-0.5">
-                Knowledge Is Power • PSS
-              </span>
             </div>
           </Link>
 
           <div
             onMouseLeave={() => setActiveDropdown(null)}
-            className="max-lg:hidden"
+            className="max-lg:hidden mx-auto"
           >
-            <div className="flex items-center gap-1 font-medium text-sm">
+            <div className="flex items-center gap-1 xl:gap-2 font-medium text-sm">
               {NavList.map((item, index) => {
                 const isDisabled = item.content?.length > 0;
                 const linkProps = {
                   onMouseEnter: (event) => handleMouseEnter(index, event),
-                  className: `text-center transition-all duration-200 flex items-center gap-1 py-2 px-3 xl:px-4 rounded-lg select-none leading-[1.1] ${
+                  className: `whitespace-nowrap transition-all duration-200 flex items-center gap-1 py-2 px-2.5 xl:px-3.5 rounded-lg select-none leading-none ${
                     activeDropdown === index
                       ? "bg-amber-50 text-sec font-bold"
                       : "text-slate-700 hover:text-sec hover:bg-amber-50/60"

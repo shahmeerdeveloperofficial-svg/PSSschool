@@ -153,7 +153,7 @@ const Pipeline = () => {
       {/* Left Sticky Pillar */}
       <div className="w-full lg:w-1/3 flex-shrink-0 sm:py-8 lg:py-12 relative">
         <div className="sticky top-28 flex flex-col max-lg:items-center max-lg:text-center space-y-4">
-          <div className="section-tag-lai max-lg:justify-center">
+          <div className="section-tag-pss max-lg:justify-center">
             <span>(</span>
             <span>academic roadmap</span>
             <span>)</span>

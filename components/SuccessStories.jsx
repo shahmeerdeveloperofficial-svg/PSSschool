@@ -57,7 +57,7 @@ export default function SuccessStories() {
 
   return (
     <section className="maxWSec px-4 sm:px-8 lg:px-12 py-20 flex gap-12 flex-col relative overflow-hidden">
-      {/* LA International Signature Ambient Clouds */}
+      {/* PSS Ambient Clouds */}
       <div className="top-cloud -top-10 left-10 w-96 h-32 opacity-20 pointer-events-none">
         <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
           <path d="M40 80 Q60 30 110 50 Q160 10 230 40 Q290 20 330 60 Q370 70 380 90 Q340 110 200 110 Q70 110 40 80 Z" fill="currentColor" />
@@ -66,7 +66,7 @@ export default function SuccessStories() {
 
       {/* Header */}
       <div className="text-center space-y-3 relative z-10">
-        <div className="section-tag-lai justify-center">
+        <div className="section-tag-pss justify-center">
           <span>(</span>
           <span>success stories</span>
           <span>)</span>
@@ -82,7 +82,7 @@ export default function SuccessStories() {
         </p>
       </div>
 
-      {/* Success Cards Grid with Hover Photo Reveal (LA International Signature) */}
+      {/* Success Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
         {successStories.map((story, i) => {
           const isHovered = hoveredIdx === i;
