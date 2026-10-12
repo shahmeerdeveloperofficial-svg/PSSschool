@@ -1,21 +1,43 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function Marquee() {
-  const [offset, setOffset] = useState(0);
+  const containerRef = useRef(null);
+  const textPathRef = useRef(null);
 
   useEffect(() => {
     let animId;
     let current = 0;
+    let isVisible = false;
+
     const animate = () => {
-      current -= 0.75;
-      if (current <= -2500) current = 0;
-      setOffset(current);
+      if (isVisible && textPathRef.current) {
+        current -= 0.8;
+        if (current <= -2500) current = 0;
+        textPathRef.current.setAttribute("startOffset", `${current}px`);
+      }
       animId = requestAnimationFrame(animate);
     };
+
+    // Pause RAF when not visible to save 100% CPU on scroll
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0.05 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
     animId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animId);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      observer.disconnect();
+    };
   }, []);
 
   const marqueeText =
@@ -23,8 +45,11 @@ export default function Marquee() {
   const repeatedText = Array(12).fill(marqueeText).join(" ");
 
   return (
-    <section className="w-full relative overflow-hidden py-6 sm:py-10 bg-gradient-to-b from-transparent via-amber-50/30 to-transparent">
-      {/* Ambient drifting cloud behind ribbon */}
+    <section
+      ref={containerRef}
+      className="w-full relative overflow-hidden py-6 sm:py-10 bg-gradient-to-b from-transparent via-amber-50/30 to-transparent"
+    >
+      {/* PSS Ambient drifting cloud behind ribbon */}
       <div className="top-cloud -top-8 left-10 w-72 sm:w-96 h-24 opacity-20 pointer-events-none">
         <svg viewBox="0 0 400 120" fill="none" className="w-full h-full text-amber-300">
           <path
@@ -35,7 +60,7 @@ export default function Marquee() {
       </div>
 
       <div className="w-full max-w-[1920px] mx-auto px-2 sm:px-4">
-        {/* LA International Signature Curved Ribbon Marquee */}
+        {/* PSS Curved Ribbon Marquee */}
         <div className="w-full relative">
           <svg
             viewBox="0 0 1920 280"
@@ -80,7 +105,7 @@ export default function Marquee() {
               strokeLinecap="round"
             />
 
-            {/* High-Tech Animated Circuit Dash Pulse */}
+            {/* Circuit Dash Pulse */}
             <use
               href="#rbnPath"
               fill="none"
@@ -101,7 +126,7 @@ export default function Marquee() {
                 letterSpacing: "0.08em",
               }}
             >
-              <textPath href="#rbnPath" startOffset={`${offset}px`}>
+              <textPath ref={textPathRef} href="#rbnPath" startOffset="0px">
                 {repeatedText}
               </textPath>
             </text>

@@ -38,9 +38,10 @@ const videoPlaylists = [
     badge: "★ INSIDE THE PAKISTAN SCHOOL OF SCIENCE ★",
     headline: "Take a Virtual Walk Through Our State-of-the-Art Campus",
     desc: "Witness the real classrooms, experimental science laboratories, vibrant corridors, and inspiring educational environment where excellence comes to life.",
-    src: "/media/INSIDE.mpg",
+    src: "/media/inside.mp4",
+    backupSrc: "/media/INSIDE.mpg",
     poster: "/mainbanner.jpeg",
-    fileSize: "83.7 MB",
+    fileSize: "30.2 MB MP4",
     highlights: [
       {
         icon: <FaFlask className="text-amber-400" />,
@@ -70,9 +71,10 @@ const videoPlaylists = [
     badge: "★ GRAND ANNUAL DAY & PRIZE DISTRIBUTION ★",
     headline: "Celebrating Student Talent, Theatrical Arts & Board Honors",
     desc: "Relive the dazzling moments of our Annual Day celebrations — featuring student theatrical performances, motivational speeches, cultural tableaus, and prestigious trophy distributions.",
-    src: "/media/annual-day.mpg",
+    src: "/media/annual-day.mp4",
+    backupSrc: "/media/annual-day.mpg",
     poster: "/hero.jpg",
-    fileSize: "71.0 MB",
+    fileSize: "17.8 MB MP4",
     highlights: [
       {
         icon: <FaTrophy className="text-amber-400" />,
@@ -102,9 +104,10 @@ const videoPlaylists = [
     badge: "★ SPIRITUAL GATHERING & MORAL TARBIYAH ★",
     headline: "Inspiring Spiritual Enlightenment, Hamd-o-Naat & Character Excellence",
     desc: "A soulful spiritual assembly fostering Islamic character, melodious Hamd-o-Naat recitations, Husn-e-Qira'at, and moral tarbiyah in the luminous tradition of The Pakistan School of Science.",
-    src: "/media/mahfil.mpg",
+    src: "/media/mahfil.mp4",
+    backupSrc: "/media/mahfil.mpg",
     poster: "/hero1.jpg",
-    fileSize: "62.5 MB",
+    fileSize: "18.8 MB MP4",
     highlights: [
       {
         icon: <FaBookQuran className="text-amber-400" />,
@@ -134,9 +137,10 @@ const videoPlaylists = [
     badge: "★ OUTDOOR EXPEDITIONS & FIELD LEARNING ★",
     headline: "Educational Tours, Science Field Trips & Outdoor Expeditions",
     desc: "Taking experiential science beyond classroom boundaries through industrial visits, botanical expeditions, historical landmark tours, and outdoor student camps.",
-    src: "/media/tours.mpg",
+    src: "/media/tours.mp4",
+    backupSrc: "/media/tours.mpg",
     poster: "/slider4.JPG",
-    fileSize: "101.6 MB",
+    fileSize: "32.5 MB MP4",
     highlights: [
       {
         icon: <FaBus className="text-amber-400" />,
@@ -333,11 +337,11 @@ const VideoSec = () => {
           <div className="relative z-10 max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)] border-2 border-amber-400/40 bg-black/80 group">
             <div className="relative aspect-video w-full bg-slate-950 flex items-center justify-center overflow-hidden">
               <video
-                key={currentVideo.src}
+                key={currentVideo.id}
                 ref={videoRef}
                 className="w-full h-full object-cover"
                 poster={currentVideo.poster}
-                preload="none"
+                preload="metadata"
                 playsInline
                 onError={() => setVideoError(true)}
                 onPlay={() => {
@@ -347,8 +351,10 @@ const VideoSec = () => {
                 onPause={() => setIsPlaying(false)}
                 onEnded={() => setIsPlaying(false)}
               >
-                <source src={currentVideo.src} type="video/mpeg" />
                 <source src={currentVideo.src} type="video/mp4" />
+                {currentVideo.backupSrc && (
+                  <source src={currentVideo.backupSrc} type="video/mpeg" />
+                )}
                 Your browser does not support the video tag.
               </video>
 
