@@ -48,8 +48,8 @@ const HeroHeader = ({ title, description }) => {
   }, [isHomePage]);
 
   return (
-    <header className="p-2 sm:p-4 flex min-h-[640px] sm:min-h-[720px] h-[calc(100vh-0rem)] max-h-[880px] sm:max-h-[940px]">
-      <div className="bg-slate-950 flex relative flex-1 rounded-2xl sm:rounded-3xl overflow-hidden maxW shadow-2xl border-2 border-amber-300/40">
+    <header className="px-2 sm:px-4 pb-2 sm:pb-4 pt-0 flex min-h-[640px] sm:min-h-[720px] h-[calc(100vh-0rem)] max-h-[880px] sm:max-h-[940px]">
+      <div className="bg-slate-950 flex relative flex-1 rounded-b-2xl sm:rounded-b-3xl overflow-hidden maxW shadow-2xl border-b-2 border-x-2 border-amber-300/40">
         {/* Real School Photos - 100% Brightness & Proper Figure Framing */}
         {isHomePage &&
           heroPhotos.map((photo, index) => (

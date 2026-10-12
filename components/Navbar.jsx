@@ -52,9 +52,9 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav className="sticky -top-4 w-full z-50 h-0 max-w-full">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full maxW p-3 sm:p-8">
-        <div className="shadow-[0_8px_35px_0_rgba(45,10,84,0.14)] border border-amber-200/50 flex items-center justify-between rounded-2xl h-16 sm:h-20 bg-white/95 backdrop-blur-md text-dark px-3 sm:px-6">
+    <motion.nav className="sticky top-0 w-full z-50 h-0 max-w-full">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full maxW px-2 sm:px-6 lg:px-8 pt-0">
+        <div className="shadow-[0_4px_25px_0_rgba(45,10,84,0.12)] border-b-2 border-x border-amber-200/60 flex items-center justify-between rounded-b-2xl sm:rounded-b-3xl h-16 sm:h-20 bg-white/95 backdrop-blur-md text-dark px-3 sm:px-6">
           <Link href={"/"} name="home link" className="mr-auto flex items-center gap-2.5 sm:gap-3 group">
             <div className="relative">
               <Image
