@@ -7,7 +7,7 @@ import Link from "next/link";
 const studentLifeData = [
   { title: "Registration Process", slug: "OLevel" },
   { title: "Withdrawals and Transfers", slug: "ALevel" },
-  { title: "Primary", slug: "Primary" },
+  { title: "Primary & Middle Science Years", slug: "Primary" },
 ];
 
 export async function generateStaticParams() {
@@ -22,8 +22,8 @@ export async function generateMetadata({ params }) {
   if (!studentLife) notFound();
 
   return {
-    title: `${studentLife.title} - Student Life | NEET School System`,
-    default: "Student Life | NEET School System",
+    title: `${studentLife.title} - Student Life | The Pakistan School of Science`,
+    default: "Student Life | The Pakistan School of Science",
   };
 }
 
@@ -31,49 +31,49 @@ const cmsContentBySlug = {
   OLevel: [
     {
       type: "h2",
-      text: "Registration Process",
+      text: "Admissions & Registration Protocol",
     },
     {
       type: "p",
-      text: "The admission process at NEET School System is designed to be simple and parent-friendly. Families can contact the school office, share the student's basic details, and receive guidance about the relevant class and admission requirements.",
+      text: "The admission process at The Pakistan School of Science is structured to identify scholastic enthusiasm, scientific curiosity, and moral aptitude. Families are welcomed to register online or visit our Admissions Secretariat for syllabus review and grade level guidance.",
     },
     {
       type: "p",
-      text: "Where needed, students may be assessed to understand their current level so that placement and academic support can be planned appropriately.",
+      text: "A diagnostic cognitive and aptitude assessment is conducted to establish student competencies in mathematics, scientific reasoning, and language, ensuring individualized academic pacing.",
     },
   ],
 
   ALevel: [
     {
       type: "h2",
-      text: "Withdrawals and Transfers",
+      text: "Withdrawals and Transfer Policy",
     },
     {
       type: "p",
-      text: "If a family needs to withdraw a student or request a transfer, the school administration helps guide the process in an organized and respectful manner. Parents are encouraged to inform the school in advance so academic and administrative formalities can be completed smoothly.",
+      text: "Should a family relocate or request a formal school clearance transfer, our academic registrar ensures a streamlined, transparent administrative process with complete documentation of academic transcripts and laboratory credentials.",
     },
     {
       type: "p",
-      text: "The aim is to ensure that student records, fee matters, and required documents are handled properly so that the transition remains clear and manageable for the family.",
+      text: "Parents are requested to submit written notice as per institutional guidelines to facilitate prompt issuance of school leaving certificates and clearance verifications.",
     },
   ],
 
   Primary: [
     {
       type: "h2",
-      text: "Primary Student Life",
+      text: "Primary & Middle Years Science Immersion",
     },
     {
       type: "p",
-      text: "In the primary years, NEET School System creates a nurturing and engaging environment where students develop strong academic foundations alongside social and emotional growth.",
+      text: "In the foundational primary years, The Pakistan School of Science ignites genuine curiosity through experiential learning, discovery-based mathematics, and environmental observation.",
     },
     {
       type: "p",
-      text: "Through class participation, creative activities, and guided learning, students build confidence, curiosity, and a love for learning.",
+      text: "Students develop strong analytical literacy, ethical empathy, teamwork, and scientific experimentation in a vibrant, safe, and supportive academic community.",
     },
     {
       type: "p",
-      text: "Our primary program focuses on holistic development, ensuring every child feels safe, valued, and inspired to grow.",
+      text: "Our holistic curriculum nurtures each scholar's unique talents, balancing intensive academic mastery with physical sports and creative expression.",
     },
   ],
 };
@@ -90,14 +90,14 @@ const StudentLife = async ({ params }) => {
 
   return (
     <main>
-      <HeroHeader title={studentLife.title} description="NEET School System" />
+      <HeroHeader title={studentLife.title} description="The Pakistan School of Science — Knowledge is Power" />
       <div className="flex flex-col gap-4 maxWSec px-6 sm:px-12 py-12">
         <RichTextRenderer content={cmsData.content} />
 
         {slug === "OLevel" && (
           <Link href="/OnlineAdmission">
-            <button className="mt-4 w-fit rounded-xl bg-main px-6 py-3 text-white hover:opacity-90 transition">
-              Register Online
+            <button className="mt-4 w-fit rounded-full bg-gold-gradient hover:bg-gold-shimmer px-8 py-3 text-pss-dark font-bold shadow-lg transition-all transform hover:-translate-y-0.5">
+              Register Online Now
             </button>
           </Link>
         )}

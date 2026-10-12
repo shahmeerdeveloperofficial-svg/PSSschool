@@ -7,15 +7,15 @@ const ParentingWorkshop = () => {
     content: [
       {
         type: "h2",
-        text: "Parenting Workshop",
+        text: "Parent-School Synergy & Developmental Workshops",
       },
       {
         type: "p",
-        text: "NEET School System believes parents are essential partners in a child's development. Our parent guidance sessions are aimed at helping families better support study habits, behavior, confidence, and emotional wellbeing at home.",
+        text: "The Pakistan School of Science views parents as vital partners in nurturing the intellectual and moral fiber of our youth. Our regular workshops provide practical frameworks for fostering curiosity, digital discipline, scientific exploration, and balanced emotional growth at home.",
       },
       {
         type: "p",
-        text: "These interactions help strengthen the connection between school and home so that students receive consistent support in their academic and personal growth.",
+        text: "Led by renowned educational psychologists and seasoned academic directors, these seminars build harmonious home-school collaboration, ensuring students thrive both academically and socially.",
       },
     ],
   };
@@ -23,8 +23,8 @@ const ParentingWorkshop = () => {
   return (
     <main>
       <HeroHeader
-        title={"Parenting Workshop"}
-        description="NEET School System"
+        title={"Parenting Workshops"}
+        description="Fostering Strong Family-School Alliances for Student Success"
       />
       <div className="flex flex-col gap-2 maxWSec px-6 sm:px-12 py-12">
         <RichTextRenderer content={cmsData.content} />

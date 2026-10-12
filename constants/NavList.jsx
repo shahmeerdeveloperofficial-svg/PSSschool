@@ -1,37 +1,43 @@
 export const NavList = [
   {
-    title: "About School",
+    title: "About PSS",
     content: [
-      { title: "About NEET School System", slug: "/AboutUs" },
+      { title: "About The Pakistan School of Science", slug: "/AboutUs" },
       { title: "Chairman's Message", slug: "/ChairmanMessage" },
-      { title: "Director's Message", slug: "/DirectorMessage" },
-      { title: "Our Philosophy", slug: "/OurPhilosophy" },
-      { title: "Our Journey", slug: "/OurJourney" },
+      { title: "Principal's Message", slug: "/DirectorMessage" },
+      { title: "Educational Philosophy", slug: "/OurPhilosophy" },
+      { title: "Our Journey & Milestones", slug: "/OurJourney" },
+      { title: "Campuses & Franchise Network", slug: "/ContactUs" },
+      { title: "Code of Conduct & Policies", slug: "/AboutUs/Policies" },
+      { title: "FAQs", slug: "/AboutUs/FAQs" },
     ],
   },
   {
-    title: "Curriculum",
+    title: "Academics",
     content: [
-      { title: "Academic Program", slug: "/Curriculum/EarlyYears" },
+      { title: "Early Years & Junior Science Wing", slug: "/Curriculum/EarlyYears" },
+      { title: "Pre-Medical & Pre-Engineering Prep", slug: "/Curriculum/EarlyYears" },
+      { title: "Advanced STEM & Robotics Labs", slug: "/Curriculum/EarlyYears" },
     ],
   },
   {
-    title: "Admission",
+    title: "Admissions",
     content: [
-      { title: "Registration Process", slug: "/StudentLife/OLevel" },
-      {
-        title: "Withdrawals and Transfers",
-        slug: "/StudentLife/ALevel",
-      },
+      { title: "Online Admission Form", slug: "/OnlineAdmission" },
+      { title: "Merit & Scholarship Process", slug: "/StudentLife/OLevel" },
+      { title: "Withdrawals and Transfers", slug: "/StudentLife/ALevel" },
     ],
   },
   {
     title: "Student Life",
     content: [
-      { title: "Society and Clubs", slug: "/SocietyAndClubs" },
-      { title: "Student Counselling & Mentoring Session", slug: "/StudentCounselling" },
-      { title: "Parenting Workshop", slug: "/ParentingWorkshop" },
-      { title: "Teacher Training", slug: "/TeacherTraining" },
+      { title: "Science & Co-Curricular Societies", slug: "/SocietyAndClubs" },
+      { title: "Student Mentoring & Career Cell", slug: "/StudentCounselling" },
+      { title: "Parenting Workshops", slug: "/ParentingWorkshop" },
+      { title: "Faculty Training Modules", slug: "/TeacherTraining" },
+      { title: "Central Science & Digital Library", slug: "/Library" },
+      { title: "Sports, Athletics & Trophies", slug: "/ExtraCurricularActivities" },
+      { title: "Campus Photo Gallery (Real Moments)", slug: "/#Gallery" },
     ],
   },
   {

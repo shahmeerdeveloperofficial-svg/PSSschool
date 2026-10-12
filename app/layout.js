@@ -1,21 +1,20 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import LenisSmooth from "../components/LenisSmooth";
 import Footer from "../components/Footer";
 
 // Load Poppins font
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata = {
-  title: "NEET School System",
+  title: "The Pakistan School of Science | Knowledge is Power",
   description:
-    "NEET School System provides a caring and disciplined learning environment focused on academics, values, creativity, and student development.",
+    "The Pakistan School of Science (PSS) delivers premier STEM education, Pre-Medical & Pre-Engineering preparation, and character development under the motto 'Knowledge is Power'.",
   icons: {
-    icon: "/neetlogo.jpeg",
-    shortcut: "/neetlogo.jpeg",
-    apple: "/neetlogo.jpeg",
+    icon: "/psslogo.png",
+    shortcut: "/psslogo.png",
+    apple: "/psslogo.png",
   },
 };
 
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={poppins.className}>
-        {/* <TopBar /> */}
         <LenisSmooth />
         <main className="relative">
           <Navbar />

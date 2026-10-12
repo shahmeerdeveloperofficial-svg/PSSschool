@@ -5,7 +5,7 @@ import gsap from "gsap";
 import Image from "next/image";
 
 const DefaultList = [
-  "A caring and disciplined school environment for growing minds.",
+  "Admissions Open for Session 2026-2027 ★ The Pakistan School of Science ★ Knowledge is Power",
 ];
 
 export default function Marquee({ List = DefaultList, direction, speed }) {
@@ -16,6 +16,7 @@ export default function Marquee({ List = DefaultList, direction, speed }) {
   const ArrayData = [...List, ...List, ...List, ...List];
 
   useEffect(() => {
+    let animId;
     const rightAnimation = () => {
       if (xPercent > 0) {
         xPercent = -100;
@@ -27,7 +28,7 @@ export default function Marquee({ List = DefaultList, direction, speed }) {
           ease: "none",
         });
       }
-      requestAnimationFrame(rightAnimation);
+      animId = requestAnimationFrame(rightAnimation);
       xPercent += speed / 10;
     };
 
@@ -42,15 +43,17 @@ export default function Marquee({ List = DefaultList, direction, speed }) {
           ease: "none",
         });
       }
-      requestAnimationFrame(leftAnimation);
+      animId = requestAnimationFrame(leftAnimation);
       xPercent -= speed / 10;
     };
 
     if (direction === "left") {
-      requestAnimationFrame(leftAnimation);
+      animId = requestAnimationFrame(leftAnimation);
     } else {
-      requestAnimationFrame(rightAnimation);
+      animId = requestAnimationFrame(rightAnimation);
     }
+
+    return () => cancelAnimationFrame(animId);
   }, [direction, speed]);
 
   return (
@@ -58,24 +61,24 @@ export default function Marquee({ List = DefaultList, direction, speed }) {
       style={{
         maskImage: `linear-gradient(
         to right,
-        transparent 5%,
-        black 25%,
-        black 75%,
-        transparent 95%
+        transparent 2%,
+        black 15%,
+        black 85%,
+        transparent 98%
       )`,
         WebkitMaskImage: `linear-gradient(
         to right,
-        transparent 5%,
-        black 25%,
-        black 75%,
-        transparent 95%
+        transparent 2%,
+        black 15%,
+        black 85%,
+        transparent 98%
       )`,
       }}
-      className="maxWSec w-full flex justify-center items-center py-8 sm:py-16 overflow-hidden"
+      className="maxWSec w-full flex justify-center items-center py-6 sm:py-10 overflow-hidden"
     >
       <div
         ref={marquee}
-        className="h-fit w-fit flex-nowrap relative flex border-y border-main flex-shrink-0"
+        className="h-fit w-fit flex-nowrap relative flex border-y-2 border-amber-300/80 bg-white/90 backdrop-blur-sm py-2.5 flex-shrink-0 shadow-sm"
       >
         <div
           className="h-full flex-1 flex w-fit flex-nowrap items-center flex-shrink-0"
@@ -85,19 +88,21 @@ export default function Marquee({ List = DefaultList, direction, speed }) {
             return (
               <div
                 key={i}
-                className="flex items-center w-fit py-3 px-2 sm:px-4 gap-4 sm:gap-8 flex-shrink-0"
+                className="flex items-center w-fit py-2 px-3 sm:px-6 gap-3 sm:gap-6 flex-shrink-0"
               >
-                <div className="text-lg sm:text-3xl text-dark whitespace-nowrap flex-shrink-0">
+                <div className="text-base sm:text-2xl font-bold font-berlin text-sec whitespace-nowrap flex-shrink-0">
                   {item}
                 </div>
                 {i !== ArrayData.length && (
-                  <Image
-                    src={"/neetlogo.jpeg"}
-                    width={300}
-                    height={200}
-                    alt="Logo"
-                    className="h-10 sm:h-14 w-auto rounded-md"
-                  />
+                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl p-1 bg-white shadow-md border-2 border-main flex-shrink-0 flex items-center justify-center">
+                    <Image
+                      src={"/psslogo.png"}
+                      width={100}
+                      height={100}
+                      alt="PSS Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 )}
               </div>
             );
@@ -111,19 +116,21 @@ export default function Marquee({ List = DefaultList, direction, speed }) {
             return (
               <div
                 key={i}
-                className="flex items-center w-fit py-3 px-2 sm:px-4 gap-4 sm:gap-8 flex-shrink-0"
+                className="flex items-center w-fit py-2 px-3 sm:px-6 gap-3 sm:gap-6 flex-shrink-0"
               >
-                <div className="text-lg sm:text-3xl text-dark whitespace-nowrap flex-shrink-0">
+                <div className="text-base sm:text-2xl font-bold font-berlin text-sec whitespace-nowrap flex-shrink-0">
                   {item}
                 </div>
                 {i !== ArrayData.length && (
-                  <Image
-                    src={"/neetlogo.jpeg"}
-                    width={300}
-                    height={200}
-                    alt="Logo"
-                    className="h-10 sm:h-14 w-auto rounded-md"
-                  />
+                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl p-1 bg-white shadow-md border-2 border-main flex-shrink-0 flex items-center justify-center">
+                    <Image
+                      src={"/psslogo.png"}
+                      width={100}
+                      height={100}
+                      alt="PSS Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 )}
               </div>
             );

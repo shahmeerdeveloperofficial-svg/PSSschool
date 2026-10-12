@@ -7,15 +7,26 @@ const AuthorisedUnifromBooksellers = () => {
     content: [
       {
         type: "h2",
-        text: "Uniform and Books Information",
+        text: "Official Uniform & Academic Books Guidelines",
       },
       {
         type: "p",
-        text: "For updated information regarding uniforms, books, and related academic materials, please contact the school office directly.",
+        text: "All students of The Pakistan School of Science are required to acquire the official PSS uniform (featuring our signature royal purple blazer, white shirt, and gold-embroidered PSS heraldic crest) along with the authorized STEM course books and laboratory manuals.",
       },
       {
         type: "p",
-        text: "NEET School System shares the latest details with parents through the administration office and official communication channels.",
+        text: "To ensure color accuracy, quality embroidery, and the latest syllabus editions, parents are advised to obtain materials through authorized campus distribution centers or certified partner bookshops.",
+      },
+      {
+        type: "br",
+      },
+      {
+        type: "h2",
+        text: "Authorized Vendors & Campus Supply Desk",
+      },
+      {
+        type: "p",
+        text: "The on-campus PSS Book & Uniform Store is open Monday through Saturday during school working hours. For list inquiries and sizing assistance, please contact the campus administrative desk.",
       },
     ],
   };
@@ -23,8 +34,8 @@ const AuthorisedUnifromBooksellers = () => {
   return (
     <main>
       <HeroHeader
-        title={"Uniform and Books"}
-        description="NEET School System"
+        title={"Uniforms & Academic Textbooks"}
+        description="The Pakistan School of Science — Authorized Supplies & Attire"
       />
       <div className="flex flex-col gap-2 maxWSec px-6 sm:px-12 py-12">
         <RichTextRenderer content={cmsData.content} />

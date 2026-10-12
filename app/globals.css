@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --dark: #001b44;
-  --light: #fff;
+  --dark: #120224;
+  --light: #FFFFFF;
+  --purple: #2D0A54;
+  --gold: #C59A47;
 
-  color: #111;
-  background: #fffdf7;
+  color: #120224;
+  background: #FAF8F5;
 
   --FBerlin: 'Berlin';
-  /* scrollbar-gutter: stable; */
-
 }
 
 .h1 {
@@ -19,7 +19,7 @@
 }
 
 .h2 {
-  @apply text-4xl md:text-6xl font-berlin font-bold tracking-wide;
+  @apply text-3xl sm:text-4xl md:text-6xl font-berlin font-bold tracking-wide;
 }
 
 .h3 {
@@ -39,7 +39,7 @@ a {
 
 body {
   color: var(--dark);
-  background: var(--light);
+  background: #FCFAF7;
   margin: auto;
   overflow-y: scroll;
   width: 100%;
@@ -56,7 +56,6 @@ body.hide-scrollbar {
   @apply sm:pr-[17px];
 }
 
-
 .maxW {
   max-width: 1920px;
   margin-left: auto;
@@ -69,6 +68,19 @@ body.hide-scrollbar {
   margin-right: auto;
 }
 
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F5D77F 0%, #C59A47 50%, #E5C066 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-card-gradient {
+  background: linear-gradient(145deg, #2D0A54 0%, #1A0536 100%);
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 25px -5px rgba(197, 154, 71, 0.3);
+}
 
 .skeleton {
   background-image: linear-gradient(-45deg,
@@ -161,10 +173,59 @@ html.lenis body {
   font-style: normal;
 }
 
-/* @font-face {
-  font-family: 'Berlin';
-  src: url('../public/fonts/berlin/BRLNSB.TTF') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-} */
+@keyframes rotateInCircleGold {
+  0% {
+    transform: rotate(0deg) translate(130px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(130px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateInCircleGoldMobile {
+  0% {
+    transform: rotate(0deg) translate(100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(100px) rotate(-360deg);
+  }
+}
+
+.leadership-orbit-sphere {
+  animation: rotateInCircleGold 8s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .leadership-orbit-sphere {
+    animation: rotateInCircleGoldMobile 8s linear infinite;
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.06);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+

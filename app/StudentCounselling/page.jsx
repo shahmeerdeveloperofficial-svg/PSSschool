@@ -7,15 +7,26 @@ const StudentCounselling = () => {
     content: [
       {
         type: "h2",
-        text: "Student Counselling and Mentoring",
+        text: "Scientific Mentoring & Career Advisory",
       },
       {
         type: "p",
-        text: "At NEET School System, student guidance is an important part of school life. We help students develop confidence, healthy habits, respectful behavior, and a positive attitude toward learning.",
+        text: "At The Pakistan School of Science, individual student guidance is woven directly into our academic ethos. We recognize that true scholarly excellence stems from emotional wellness, intellectual resilience, and proactive career pathway planning.",
       },
       {
         type: "p",
-        text: "Through mentoring and regular teacher support, students are encouraged to discuss challenges, improve classroom performance, and set better goals for their growth.",
+        text: "Our specialized counsellors and faculty mentors provide one-on-one academic roadmaps, university entrance guidance (Medical, Engineering, Computer Science, and Pure Sciences), time management workshops, and mental wellness support.",
+      },
+      {
+        type: "br",
+      },
+      {
+        type: "h2",
+        text: "Career Pathways & Global University Readiness",
+      },
+      {
+        type: "p",
+        text: "We prepare senior scholars for top-tier national and international university admissions, scholarship applications, and standardized examination readiness with structured counseling milestones.",
       },
     ],
   };
@@ -23,8 +34,8 @@ const StudentCounselling = () => {
   return (
     <main>
       <HeroHeader
-        title={"Student Counselling & Mentoring Session"}
-        description="NEET School System"
+        title={"Student Counselling & Mentoring"}
+        description="Empowering Scholars with Academic Guidance & Career Clarity"
       />
       <div className="flex flex-col gap-2 maxWSec px-6 sm:px-12 py-12">
         <RichTextRenderer content={cmsData.content} />

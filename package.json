@@ -1,13 +1,11 @@
 {
-  "name": "blessing-home-public-school",
-  "version": "0.1.0",
+  "name": "the-pakistan-school-of-science",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
-    "startN": "next start",
-    "start": "cross-env NODE_ENV=production node app.js",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {

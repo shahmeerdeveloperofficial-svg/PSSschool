@@ -53,30 +53,42 @@ const Navbar = () => {
 
   return (
     <motion.nav className="sticky -top-4 w-full z-50 h-0 max-w-full">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full maxW p-8">
-        <div className="shadow-[0_0_0.5rem_0_#00000020] flex items-center justify-between rounded-xl h-16 bg-light text-dark px-3">
-          <Link href={"/"} name="home link" className="mr-auto">
-            <Image
-              src={"/neetlogo.jpeg"}
-              width={300}
-              height={200}
-              alt="NEET School System logo"
-              className="h-8 sm:h-12 w-auto rounded-md"
-            />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full maxW p-4 sm:p-8">
+        <div className="shadow-[0_8px_35px_0_rgba(45,10,84,0.14)] border border-amber-200/50 flex items-center justify-between rounded-2xl h-16 sm:h-20 bg-white/95 backdrop-blur-md text-dark px-3 sm:px-6">
+          <Link href={"/"} name="home link" className="mr-auto flex items-center gap-3 group">
+            <div className="relative">
+              <Image
+                src={"/psslogo.png"}
+                width={300}
+                height={300}
+                alt="The Pakistan School of Science logo"
+                className="h-11 sm:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-berlin font-bold text-base sm:text-xl text-sec leading-none tracking-wide">
+                PAKISTAN SCHOOL OF SCIENCE
+              </span>
+              <span className="text-[9px] sm:text-[11px] font-bold tracking-widest text-main uppercase mt-0.5">
+                Knowledge Is Power • PSS
+              </span>
+            </div>
           </Link>
+
           <div
             onMouseLeave={() => setActiveDropdown(null)}
             className="max-lg:hidden"
           >
-            <div className="flex items-center gap-0 font-medium text-sm">
+            <div className="flex items-center gap-1 font-medium text-sm">
               {NavList.map((item, index) => {
                 const isDisabled = item.content?.length > 0;
                 const linkProps = {
                   onMouseEnter: (event) => handleMouseEnter(index, event),
-                  className: `text-center transition-colors duration-150 flex items-center gap-1 py-2 px-3 xl:px-4 rounded-lg select-none leading-[1.1] ${
+                  className: `text-center transition-all duration-200 flex items-center gap-1 py-2 px-3 xl:px-4 rounded-lg select-none leading-[1.1] ${
                     activeDropdown === index
-                      ? "bg-slate-100 hover:bg-slate-100"
-                      : "hover:bg-slate-100"
+                      ? "bg-amber-50 text-sec font-bold"
+                      : "text-slate-700 hover:text-sec hover:bg-amber-50/60"
                   }`,
                   target: item.blank ? "_blank" : "_self",
                   rel: item.blank ? "noopener noreferrer" : "",
@@ -87,12 +99,12 @@ const Navbar = () => {
                     {item.title}
                   </Link>
                 ) : (
-                  <div {...linkProps} key={index}>
+                  <div {...linkProps} key={index} className={`${linkProps.className} cursor-pointer`}>
                     {item.title}{" "}
                     <FaChevronDown
                       className={`${
-                        activeDropdown === index ? "rotate-180" : ""
-                      } transition-transform duration-300 opacity-60 font-normal size-3 align-middle ml-1 mb-px`}
+                        activeDropdown === index ? "rotate-180 text-main" : ""
+                      } transition-transform duration-300 opacity-70 font-normal size-3 align-middle ml-1 mb-px`}
                     />
                   </div>
                 );
@@ -126,15 +138,15 @@ const Navbar = () => {
                       ease: "easeIn",
                     },
                   }}
-                  className="origin-top w-[300px] max-w-full absolute pt-7 top-[calc(100%-3.5rem)] "
+                  className="origin-top w-[330px] max-w-full absolute pt-7 top-[calc(100%-3.5rem)]"
                 >
-                  <div className="bg-white shadow-[0_0.2rem_0.5rem_0_#00000020] rounded-lg p-2">
-                    <ul className="flex flex-col divide-y divide-slate-200">
+                  <div className="bg-white shadow-[0_12px_40px_0_rgba(45,10,84,0.18)] border border-amber-200/80 rounded-2xl p-3">
+                    <ul className="flex flex-col divide-y divide-amber-100/60">
                       {NavList[activeDropdown]?.content.map(
                         (subItem, subIndex) => (
                           <li key={subIndex} className="flex">
                             <Link
-                              className="p-2 flex-1 transition-colors duration-150 hover:bg-main hover:text-black rounded-lg text-sm"
+                              className="p-2.5 flex-1 transition-all duration-200 hover:bg-gradient-to-r hover:from-sec hover:to-secL hover:text-white rounded-xl text-sm text-slate-700 font-medium"
                               href={`${subItem.slug}`}
                             >
                               {subItem.title}
@@ -151,13 +163,15 @@ const Navbar = () => {
           <Link
             href={"/OnlineAdmission"}
             name="admission link"
-            className="max-sm:hidden ml-1"
+            className="max-sm:hidden ml-3"
           >
-            <Button size="small">Online Admission</Button>
+            <Button size="small" btnType="main">
+              Online Admission
+            </Button>
           </Link>
           <button
             onClick={handleNavOpen}
-            className="lg:hidden transition-all duration-300 hover:bg-slate-100 h-10 w-10 grid place-content-center rounded-lg text-2xl"
+            className="lg:hidden transition-all duration-300 hover:bg-amber-50 h-10 w-10 grid place-content-center rounded-xl text-2xl text-sec ml-2"
           >
             <FiMenu />
           </button>
@@ -175,7 +189,7 @@ const Navbar = () => {
               exit={{ opacity: 0 }}
               transition={transition}
               onClick={handleNavClose}
-              className="absolute inset-0 bg-dark/50"
+              className="absolute inset-0 bg-dark/70 backdrop-blur-sm"
             ></motion.div>
             <motion.div
               initial={{ x: "0" }}
@@ -190,21 +204,29 @@ const Navbar = () => {
               }}
               transition={transition}
               data-lenis-prevent
-              className="p-4 flex flex-col gap-2 absolute left-full top-0 z-10 bg-light h-full max-h-[100dvh] w-[min(380px,90%)] rounded-s-2xl overflow-y-scroll"
+              className="p-5 flex flex-col gap-2 absolute left-full top-0 z-10 bg-white h-full max-h-[100dvh] w-[min(380px,90%)] rounded-s-2xl overflow-y-scroll shadow-2xl"
             >
-              <div className="bg-main/20 px-2 py-4 mb-4 rounded-xl flex gap-2 items-center justify-between">
-                <Link href={"/"} name="home link">
+              <div className="bg-gradient-to-r from-sec via-[#3E1470] to-secD p-3 mb-4 rounded-xl flex gap-2 items-center justify-between text-white border border-amber-300/30">
+                <Link href={"/"} name="home link" className="flex items-center gap-3">
                   <Image
-                    src={"/neetlogo.jpeg"}
-                    width={300}
+                    src={"/psslogo.png"}
+                    width={200}
                     height={200}
-                    alt="NEET School System logo"
-                    className="h-12 w-auto rounded-md"
+                    alt="The Pakistan School of Science logo"
+                    className="h-11 w-auto object-contain bg-white rounded-md p-1"
                   />
+                  <div className="flex flex-col">
+                    <span className="font-berlin font-bold text-sm text-white leading-tight">
+                      PAKISTAN SCHOOL OF SCIENCE
+                    </span>
+                    <span className="text-[10px] font-semibold text-amber-300">
+                      Knowledge is Power
+                    </span>
+                  </div>
                 </Link>
                 <button
                   onClick={handleNavClose}
-                  className="transition-all text-dark duration-300 hover:bg-light h-10 w-10 grid place-content-center rounded-full text-2xl"
+                  className="transition-all text-white hover:bg-white/20 h-9 w-9 grid place-content-center rounded-full text-xl"
                 >
                   <RxCross2 />
                 </button>

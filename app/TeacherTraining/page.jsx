@@ -7,15 +7,26 @@ const TeacherTraining = () => {
     content: [
       {
         type: "h2",
-        text: "Teacher Training",
+        text: "Excellence in Science Pedagogy & Faculty Development",
       },
       {
         type: "p",
-        text: "We believe strong schools are built by strong teachers. NEET School System supports continuous teacher development so that classroom instruction remains clear, effective, and student-focused.",
+        text: "The Pakistan School of Science invests deeply in its faculty. Exceptional education requires instructors who master modern instructional design, inquiry-based scientific exploration, and high-engagement classroom dynamics.",
       },
       {
         type: "p",
-        text: "Training and internal guidance help our teaching team improve lesson delivery, student engagement, class management, and assessment practices throughout the academic year.",
+        text: "Our ongoing Continuous Professional Development (CPD) programs equip teachers with smart classroom technologies, lab safety protocols, Olympiad mentorship skills, and differentiated learning strategies.",
+      },
+      {
+        type: "br",
+      },
+      {
+        type: "h2",
+        text: "Core Training Modules",
+      },
+      {
+        type: "p",
+        text: "Faculty participate in periodic workshops covering STEM Curriculum Alignment, Digital Laboratory Simulation, Formative Assessment Techniques, and Student Mental Wellness First Aid.",
       },
     ],
   };
@@ -23,8 +34,8 @@ const TeacherTraining = () => {
   return (
     <main>
       <HeroHeader
-        title={"Teacher Training"}
-        description="NEET School System"
+        title={"Teacher Training & Faculty Excellence"}
+        description="Continuous Professional Development for 21st-Century Science Educators"
       />
       <div className="flex flex-col gap-2 maxWSec px-6 sm:px-12 py-12">
         <RichTextRenderer content={cmsData.content} />

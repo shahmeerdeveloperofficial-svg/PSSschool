@@ -7,15 +7,26 @@ const Library = () => {
     content: [
       {
         type: "h2",
-        text: "Library",
+        text: "The PSS Knowledge Commons & Research Library",
       },
       {
         type: "p",
-        text: "The library at NEET School System supports reading habits, curiosity, and independent learning. Students are encouraged to explore age-appropriate books and learning resources that strengthen language and understanding.",
+        text: "In resonance with our motto 'Knowledge is Power', the Central Library at The Pakistan School of Science serves as an intellectual sanctuary. We house thousands of volumes across physical sciences, mathematics, technology, world literature, history, and academic research.",
       },
       {
         type: "p",
-        text: "A reading-friendly environment helps children grow academically while also developing imagination, concentration, and love for knowledge.",
+        text: "Complementing our physical collection is an advanced Digital Resource Center featuring subscriptions to scholarly databases, e-books, science journals, and interactive multimedia archives.",
+      },
+      {
+        type: "br",
+      },
+      {
+        type: "h2",
+        text: "Library Features & Scholarly Amenities",
+      },
+      {
+        type: "p",
+        text: "• Extensive STEM & Medical / Engineering Entrance Archives\n• Dedicated Quiet Research Cubicles & Collaborative Study Pods\n• Automated RFID Book Tracking and Digital Catalog Access\n• Junior Science Discovery Corner for Early Years exploration",
       },
     ],
   };
@@ -23,8 +34,8 @@ const Library = () => {
   return (
     <main>
       <HeroHeader
-        title={"Library"}
-        description="NEET School System"
+        title={"Knowledge Commons & Central Library"}
+        description="The Pakistan School of Science — Where Curiosity Meets Endless Discovery"
       />
       <div className="flex flex-col gap-2 maxWSec px-6 sm:px-12 py-12">
         <RichTextRenderer content={cmsData.content} />
