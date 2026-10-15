@@ -1,0 +1,382 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark: #120224;
+  --light: #FFFFFF;
+  --purple: #2D0A54;
+  --gold: #C59A47;
+
+  color: #120224;
+  background: #FAF8F5;
+
+  --FBerlin: 'Berlin';
+}
+
+.h1 {
+  @apply text-4xl sm:text-5xl md:text-7xl font-berlin font-bold tracking-wide;
+}
+
+.h2 {
+  @apply text-3xl sm:text-4xl md:text-6xl font-berlin font-bold tracking-wide;
+}
+
+.h3 {
+  @apply text-2xl md:text-3xl font-berlin font-semibold tracking-wide;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+  background: #FCFAF7;
+  margin: auto;
+  overflow-y: scroll;
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  min-height: 100vh;
+}
+
+body.hide-scrollbar {
+  height: 100vh;
+  overflow: hidden !important;
+  @apply sm:pr-[17px];
+}
+
+.maxW {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.maxWSec {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F5D77F 0%, #C59A47 50%, #E5C066 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-card-gradient {
+  background: linear-gradient(145deg, #2D0A54 0%, #1A0536 100%);
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 25px -5px rgba(197, 154, 71, 0.3);
+}
+
+.skeleton {
+  background-image: linear-gradient(-45deg,
+      transparent calc(50% - 50px),
+      rgba(255, 255, 255, 0.05),
+      transparent calc(50% + 50px),
+      transparent);
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 200%;
+  }
+
+  80% {
+    background-position: -200% -200%;
+  }
+
+  100% {
+    background-position: -200% -200%;
+  }
+}
+
+.ConicRotate {
+  animation: ConicRotate 8s linear infinite;
+}
+
+.ConicGradient {
+  background: conic-gradient(from 0deg, transparent 0deg 15deg, var(--conic-color), transparent 85deg 360deg) !important;
+}
+
+@keyframes ConicRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.waveCenter {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: wave infinite linear 4s;
+}
+
+@keyframes wave {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Berlin';
+  src: url('/fonts/berlin/BRLNSR.TTF') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@keyframes rotateInCircleGold {
+  0% {
+    transform: rotate(0deg) translate(130px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(130px) rotate(-360deg);
+  }
+}
+
+@keyframes rotateInCircleGoldMobile {
+  0% {
+    transform: rotate(0deg) translate(100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(100px) rotate(-360deg);
+  }
+}
+
+.leadership-orbit-sphere {
+  animation: rotateInCircleGold 8s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .leadership-orbit-sphere {
+    animation: rotateInCircleGoldMobile 8s linear infinite;
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.06);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* === ANIMATION SYSTEM === */
+
+/* 1. Blinking Heading Cursor */
+@keyframes cursorLine {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.heading-cursor-line {
+  display: inline-block;
+  margin-left: 0.15em;
+  font-weight: 300;
+  animation: cursorLine 1s ease-out infinite;
+  color: #C59A47;
+}
+
+/* 2. Traveling High-Tech Circuit SVG Lines */
+.webflow-animated-line {
+  stroke-dasharray: 20 100;
+  animation: travelingLineAnim 2.6s linear infinite;
+  stroke-linecap: round;
+}
+
+@keyframes travelingLineAnim {
+  0% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+/* 3. Ambient Floating Vector Clouds */
+.top-cloud {
+  position: absolute;
+  pointer-events: none;
+  animation: cloudDriftSlow 65s linear infinite alternate;
+  will-change: transform;
+}
+
+.bottom-cloud {
+  position: absolute;
+  pointer-events: none;
+  animation: cloudDriftSlow 85s linear infinite alternate-reverse;
+  will-change: transform;
+}
+
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(-8%) translateY(0px);
+  }
+  50% {
+    transform: translateX(4%) translateY(-6px);
+  }
+  100% {
+    transform: translateX(10%) translateY(0px);
+  }
+}
+
+/* 4. Interactive Magnetic Button with Scalable Bubble & Dot */
+.pss-btn,
+.lai-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pss-btn-scale,
+.lai-btn-scale {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pss-btn:hover .pss-btn-scale,
+.lai-btn:hover .lai-btn-scale {
+  transform: translateY(-50%) scale(9);
+}
+
+.pss-btn-dot,
+.lai-btn-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* 5. Cinematic Photo Enhancement */
+.cinematic-photo {
+  filter: contrast(1.08) brightness(1.04) saturate(1.12);
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinematic-photo:hover {
+  filter: contrast(1.12) brightness(1.08) saturate(1.18);
+}
+
+/* 6. Bell Swing Physics Keyframes */
+@keyframes bellSwing {
+  0% { transform: rotate(-18deg); }
+  50% { transform: rotate(18deg); }
+  100% { transform: rotate(-18deg); }
+}
+
+@keyframes clapperSwing {
+  0% { transform: rotate(24deg); }
+  50% { transform: rotate(-24deg); }
+  100% { transform: rotate(24deg); }
+}
+
+.bell-swing-anim {
+  transform-origin: top center;
+  animation: bellSwing 2.2s ease-in-out infinite;
+}
+
+.clapper-swing-anim {
+  transform-origin: top center;
+  animation: clapperSwing 2.2s ease-in-out 0.1s infinite;
+}
+
+/* 7. Section Tag Badge (PSS Style) */
+.section-tag-pss,
+.section-tag-lai {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #C59A47;
+  margin-bottom: 0.5rem;
+}

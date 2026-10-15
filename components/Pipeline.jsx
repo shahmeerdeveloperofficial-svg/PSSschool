@@ -12,7 +12,6 @@ import {
   FaBookOpen,
   FaArrowRight,
   FaCheck,
-  FaSparkles,
   FaStar,
 } from "react-icons/fa6";
 

@@ -118,12 +118,12 @@ const SocietyAndClubs = () => {
 
             <div className="flex flex-col gap-2 w-full md:w-auto">
               <a
-                href="/media/mahfil.mpg"
+                href="/media/mahfil.mp4"
                 download
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-bold text-sm shadow-xl hover:scale-105 transition-all"
               >
                 <FaDownload />
-                <span>Download Mehfil Video (62.5 MB)</span>
+                <span>Download Mehfil Video (18.8 MB MP4)</span>
               </a>
             </div>
           </div>
@@ -139,8 +139,8 @@ const SocietyAndClubs = () => {
               onPause={() => setIsPlaying(false)}
               onEnded={() => setIsPlaying(false)}
             >
+              <source src="/media/mahfil.mp4" type="video/mp4" />
               <source src="/media/mahfil.mpg" type="video/mpeg" />
-              <source src="/media/mahfil.mpg" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 

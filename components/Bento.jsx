@@ -13,7 +13,6 @@ import {
   FaArrowRight,
   FaMicroscope,
   FaCircleCheck,
-  FaSparkles,
   FaStar,
 } from "react-icons/fa6";
 

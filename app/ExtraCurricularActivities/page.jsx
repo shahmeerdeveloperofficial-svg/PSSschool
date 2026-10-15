@@ -105,12 +105,12 @@ const ExtraCurricularActivities = () => {
 
             <div className="flex flex-col gap-2 w-full md:w-auto">
               <a
-                href="/media/annual-day.mpg"
+                href="/media/annual-day.mp4"
                 download
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-bold text-sm shadow-xl hover:scale-105 transition-all"
               >
                 <FaDownload />
-                <span>Download Event Video (71 MB)</span>
+                <span>Download Event Video (17.9 MB MP4)</span>
               </a>
             </div>
           </div>
@@ -126,8 +126,8 @@ const ExtraCurricularActivities = () => {
               onPause={() => setIsPlaying(false)}
               onEnded={() => setIsPlaying(false)}
             >
+              <source src="/media/annual-day.mp4" type="video/mp4" />
               <source src="/media/annual-day.mpg" type="video/mpeg" />
-              <source src="/media/annual-day.mpg" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
