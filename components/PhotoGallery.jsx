@@ -27,9 +27,9 @@ const photos = [
   {
     id: 2,
     src: "/pss-gallery/pss-2.jpeg",
-    title: "Experimental Science Practical Session",
-    category: "Science & Labs",
-    desc: "Students conducting chemical and physical observations in purpose-built science labs.",
+    title: "Faculty & Student Educational Field Tour",
+    category: "Campus & Life",
+    desc: "Mentors and scholars on an outdoor field study excursion enjoying nature, fellowship, and outdoor learning.",
   },
   {
     id: 3,
@@ -48,9 +48,9 @@ const photos = [
   {
     id: 5,
     src: "/pss-gallery/pss-5.jpeg",
-    title: "STEM Robotics & Computational Workshop",
-    category: "Science & Labs",
-    desc: "Young innovators exploring technology hardware and software programming logic.",
+    title: "Annual Prize Distribution Stage Hosting",
+    category: "Annual Celebrations",
+    desc: "Confident stage moderation, speeches, and declamation hosting at the PSS Annual Prize Distribution Gala.",
   },
   {
     id: 6,
@@ -83,9 +83,9 @@ const photos = [
   {
     id: 10,
     src: "/pss-gallery/pss-10.jpeg",
-    title: "Annual Sports Day Athletics & Sprint Meet",
-    category: "Sports & Activities",
-    desc: "Fostering physical stamina, healthy competition, and true sportsmanship.",
+    title: "Academic Distinction Shield Presentation",
+    category: "Annual Celebrations",
+    desc: "Chairman and Principal presenting an engraved distinction shield to a top-achieving student.",
   },
   {
     id: 11,
@@ -97,9 +97,9 @@ const photos = [
   {
     id: 12,
     src: "/pss-gallery/pss-12.jpeg",
-    title: "Mehfil-e-Naat Recital & Spiritual Gathering",
+    title: "Junior School Medal Achievers",
     category: "Annual Celebrations",
-    desc: "Soulful recitations of Quranic verses and Hamd-o-Naat in moral tarbiyah gatherings.",
+    desc: "Junior wing prize winners proudly displaying their shining silver merit medals on stage.",
   },
   {
     id: 13,
@@ -118,9 +118,9 @@ const photos = [
   {
     id: 15,
     src: "/pss-gallery/pss-15.jpeg",
-    title: "Art, Calligraphy & Creative Model Exhibition",
-    category: "Campus & Life",
-    desc: "Showcasing student visual creativity, scientific models, and calligraphy art.",
+    title: "Official Certificate of Recognition Award",
+    category: "Annual Celebrations",
+    desc: "School administration presenting official Certificates of Recognition honoring exceptional service.",
   },
   {
     id: 16,
@@ -181,9 +181,9 @@ const photos = [
   {
     id: 24,
     src: "/pss-gallery/pss-24.jpeg",
-    title: "Declamation Contest & Speech Podium",
-    category: "Annual Celebrations",
-    desc: "English and Urdu parliamentary debate rounds inspiring confident orators.",
+    title: "Northern Mountain Excursion & Retreat",
+    category: "Campus & Life",
+    desc: "Scenic recreational retreat to northern hill stations building outdoor leadership, fellowship, and character.",
   },
   {
     id: 25,
